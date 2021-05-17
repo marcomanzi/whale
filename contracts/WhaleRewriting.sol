@@ -20,7 +20,7 @@ contract WhaleRewriting is ERC20PresetMinterPauser, Ownable {
     uint256 public maxTransferInPeriod = 2 * 10**3 * 10**6 * 10**18; // a day
     uint256 public choosenTotalSupply = 10**9 * 10**6 * 10**18;
 
-    constructor() ERC20PresetMinterPauser('FakeWhaleV2', 'FW2') {
+    constructor() ERC20PresetMinterPauser('FakeWhaleFinal', 'FWF') {
         mint(_msgSender(), choosenTotalSupply);
         //Create a uniswap pair for this new token
         
