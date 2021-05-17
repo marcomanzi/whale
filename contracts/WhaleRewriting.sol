@@ -24,12 +24,12 @@ contract WhaleRewriting is ERC20PresetMinterPauser, Ownable {
         mint(_msgSender(), choosenTotalSupply);
         //Create a uniswap pair for this new token
         
-        // IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x10ED43C718714eb63d5aA57B78B54704E256024E); //pancakeSwap
-        // uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory())
-        //     .createPair(address(this), _uniswapV2Router.WETH());
-        // _isExcludedFromAntiWhale[0x10ED43C718714eb63d5aA57B78B54704E256024E] = true;
-        // _isExcludedFromAntiWhale[_uniswapV2Router.factory()] = true;
-        // _isExcludedFromAntiWhale[uniswapV2Pair] = true;
+         IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x10ED43C718714eb63d5aA57B78B54704E256024E); //pancakeSwap
+         uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory())
+             .createPair(address(this), _uniswapV2Router.WETH());
+         _isExcludedFromAntiWhale[0x10ED43C718714eb63d5aA57B78B54704E256024E] = true;
+         _isExcludedFromAntiWhale[_uniswapV2Router.factory()] = true;
+         _isExcludedFromAntiWhale[uniswapV2Pair] = true;
         
         //TEST
         // IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0xD99D1c33F9fC3444f8101754aBC46c52416550D1); //PancakeSwapTestRouter
@@ -38,12 +38,6 @@ contract WhaleRewriting is ERC20PresetMinterPauser, Ownable {
         // _isExcludedFromAntiWhale[0xD99D1c33F9fC3444f8101754aBC46c52416550D1] = true;
         // _isExcludedFromAntiWhale[0x6725F303b657a9451d8BA641348b6761A6CC7a17] = true;
         // _isExcludedFromAntiWhale[uniswapV2Pair] = true;
-        // 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
-        // 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2
-        // 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
-        mint(0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2, 2 * 10**18);
-        mint(0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db, 2 * 10**18);
-        
         _isExcludedFromAntiWhale[_msgSender()] = true;
     }
     
