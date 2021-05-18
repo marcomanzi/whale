@@ -45,21 +45,21 @@ function init() {
     // Built-in web browser provider (only one can exist as a time)
     // like MetaMask, Brave or Opera is added automatically by Web3modal
     const providerOptions = {
-        walletconnect: {
-            package: WalletConnectProvider,
-            options: {
-                // Mikko's test key - don't copy as your mileage may vary
-                infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
-            }
-        },
-
-        fortmatic: {
-            package: Fortmatic,
-            options: {
-                // Mikko's TESTNET api key
-                key: "pk_test_391E26A3B43A3350"
-            }
-        }
+        // walletconnect: {
+        //     package: WalletConnectProvider,
+        //     options: {
+        //         // Mikko's test key - don't copy as your mileage may vary
+        //         infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
+        //     }
+        // },
+        //
+        // fortmatic: {
+        //     package: Fortmatic,
+        //     options: {
+        //         // Mikko's TESTNET api key
+        //         key: "pk_test_391E26A3B43A3350"
+        //     }
+        // }
     };
 
     web3Modal = new Web3Modal({
@@ -137,7 +137,7 @@ async function fetchAccountData() {
     document.querySelector("#connected").style.display = "block";
     document.querySelector(".buyMobyDickButton").addEventListener("click", async function() {
         alert(document.querySelector(".amountToBuy").value);
-        web3.eth.sendTransaction({from: selectedAccount, to: '0x0DFCBf129AC6ad70ca1cEcBa5f055a46A6EC8fbf', value: document.querySelector(".amountToBuy").value * 10**18});
+        web3.eth.sendTransaction({from: selectedAccount, to: '0x35541C86Bbb78D7D978B9804494aD7d4ea5C0517', value: document.querySelector(".amountToBuy").value * 10**18});
     });
 }
 
